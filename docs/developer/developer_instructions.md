@@ -22,9 +22,13 @@ Example:
 Assume the original component is located in an app inside the library:
 
 projects/dashboard-core/home/src/
+
 ├── home-view/home-view.component.ts
+
 ├── home-view/home-view.component.html
+
 ├── home-view/home-view.component.css
+
 └── index.ts
 
 To overwrite it, you’ll create:
