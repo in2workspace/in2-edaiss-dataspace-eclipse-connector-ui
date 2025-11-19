@@ -5,56 +5,25 @@ export const environment = {
   production: true,
   edcConfigs: [
     {
-      connectorName: 'Analytic Platform',
-      managementUrl:
-        'https://ca-in2-edaiss-ds-analytics-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/management',
-      defaultUrl: 'https://ca-in2-edaiss-ds-analytics-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/api',
-      protocolUrl:
-        'https://ca-in2-edaiss-ds-analytics-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/protocol',
+      connectorName: 'Consumer',
+      managementUrl: 'http://cp-consumer.dataspace/management',
+      defaultUrl: 'http://cp-consumer.dataspace/api',
+      protocolUrl: 'http://cp-consumer.dataspace/protocol',
       federatedCatalogEnabled: false,
-      federatedCatalogUrl:
-        'https://ca-in2-edaiss-ds-analytics-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/catalog',
-      did: 'did:web:ca-in2-edaiss-ds-analytics-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io:analytics-connector',
+      federatedCatalogUrl: 'http://fc-consumer.dataspace/catalog',
+      did: 'did:web:ih-consumer.dataspace',
     },
     {
-      connectorName: 'Consell Comarcal del Pallars Jussà',
-      managementUrl:
-        'https://ca-in2-edaiss-ds-healthcare-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/management',
-      defaultUrl: 'https://ca-in2-edaiss-ds-healthcare-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/api',
-      protocolUrl:
-        'https://ca-in2-edaiss-ds-healthcare-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/protocol',
+      connectorName: 'Provider',
+      managementUrl: 'http://cp-provider.dataspace/management',
+      defaultUrl: 'http://cp-provider.dataspace/api',
+      protocolUrl: 'http://cp-provider.dataspace/protocol',
       federatedCatalogEnabled: false,
-      federatedCatalogUrl:
-        'https://ca-in2-edaiss-ds-healthcare-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/catalog',
-      did: 'did:web:ca-in2-edaiss-ds-healthcare-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io:healthcare-connector',
-    },
-    {
-      connectorName: "Consell Comarcal de l'Alt Penedès",
-      managementUrl:
-        'https://ca-in2-edaiss-ds-healthcare-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/management',
-      defaultUrl: 'https://ca-in2-edaiss-ds-healthcare-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/api',
-      protocolUrl:
-        'https://ca-in2-edaiss-ds-healthcare-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/protocol',
-      federatedCatalogEnabled: false,
-      federatedCatalogUrl:
-        'https://ca-in2-edaiss-ds-healthcare-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/catalog',
-      did: 'did:web:ca-in2-edaiss-ds-healthcare-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io:healthcare-connector',
-    },
-    {
-      connectorName: 'Salud Pública',
-      managementUrl:
-        'https://ca-in2-edaiss-ds-pbhealth-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/management',
-      defaultUrl: 'https://ca-in2-edaiss-ds-pbhealth-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/api',
-      protocolUrl:
-        'https://ca-in2-edaiss-ds-pbhealth-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/protocol',
-      federatedCatalogEnabled: false,
-      federatedCatalogUrl:
-        'https://ca-in2-edaiss-ds-pbhealth-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/catalog',
-      did: 'did:web:ca-in2-edaiss-ds-pbhealth-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io:publichealth-connector',
+      federatedCatalogUrl: 'http://fc-provider.dataspace/catalog',
+      did: 'did:web:ih-provider.dataspace',
     },
   ] as EdcConfig[],
   appConfig: {
-    appTitle: 'EDAISS EDC Dashboard',
     healthCheckIntervalSeconds: 30,
     enableUserConfig: false,
     menuItems: [
