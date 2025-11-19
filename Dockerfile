@@ -18,11 +18,19 @@ WORKDIR /app
 
 # Copy package files and install dependencies
 COPY package.json package-lock.json ./
+
+# Disable Husky and Cypress download
+RUN npm pkg set scripts.prepare="echo skipping husky"
+ENV CYPRESS_INSTALL_BINARY=0
+ENV CI=1
+
+# Install **all dependencies**, including devDependencies
 RUN npm ci
 
 # Copy the full project and build it
 COPY . .
-RUN npm run lib-build -- --configuration production && npm run build -- --configuration production
+ARG ORG_CONFIG=production
+RUN npm run lib-build -- --configuration production && npm run build -- --configuration $ORG_CONFIG
 
 
 # Stage 2: Serve the app with Nginx
