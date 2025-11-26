@@ -1,0 +1,40 @@
+/*
+ *  Copyright (c) 2025 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
+ *
+ *  This program and the accompanying materials are made available under the
+ *  terms of the Apache License, Version 2.0 which is available at
+ *  https://www.apache.org/licenses/LICENSE-2.0
+ *
+ *  SPDX-License-Identifier: Apache-2.0
+ *
+ *  Contributors:
+ *       Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V. - initial API and implementation
+ *
+ */
+
+import { Component } from '@angular/core';
+import { RouterLink, RouterLinkActive, RouterOutlet } from '@angular/router';
+import { AsyncPipe, NgClass, NgForOf } from '@angular/common';
+import { DashboardAppComponent } from './dashboard-app.component';
+import { DashboardStateService } from '../services/dashboard-state.service';
+import { EdcClientService } from '../services/edc-client.service';
+import { ModalAndAlertService } from '../services/modal-and-alert.service';
+import { version } from 'package.json';
+
+@Component({
+  selector: 'lib-dashboard-app',
+  standalone: true,
+  imports: [RouterOutlet, NgForOf, RouterLink, RouterLinkActive, AsyncPipe, NgClass],
+  templateUrl: './dashboard-app-custom.component.html',
+  styleUrl: './dashboard-app-custom.component.css',
+})
+export class DashboardAppCustomComponent extends DashboardAppComponent {
+  version: string = version;
+  constructor(
+    stateService: DashboardStateService,
+    edcClientService: EdcClientService,
+    modalAndAlertService: ModalAndAlertService,
+  ) {
+    super(stateService, edcClientService, modalAndAlertService);
+  }
+}

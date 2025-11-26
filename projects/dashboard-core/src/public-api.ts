@@ -20,7 +20,7 @@ export * from './lib/services/dashboard-state.service';
 export * from './lib/services/modal-and-alert.service';
 export * from './lib/services/edc-client.service';
 export * from './lib/services/data-type-registry.service';
-export * from './lib/dashboard-app/dashboard-app.component';
+export { DashboardAppCustomComponent as DashboardAppComponent } from './lib/dashboard-app/dashboard-app-custom.component';
 export * from './lib/common/jsonld-viewer/jsonld-viewer.component';
 export * from './lib/common/filter-input/filter-input.component';
 export * from './lib/common/pagination/pagination.component';

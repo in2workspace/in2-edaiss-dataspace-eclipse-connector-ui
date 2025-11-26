@@ -1,5 +1,5 @@
 {
-  "appTitle": "EDAISS EDC Dashboard",
+  "appTitle": "EDAISS Dashboard",
   "healthCheckIntervalSeconds": 30,
   "enableUserConfig": false,
   "menuItems": [
