@@ -12,5 +12,5 @@
  *
  */
 
-export * from './src/contract-definitions-view/contract-definitions-view.component';
+export { ContractDefinitionsViewCustomComponent as ContractDefinitionsViewComponent } from './src/contract-definitions-view/contract-definitions-view-custom.component';
 export * from './src/contract-definitions.service';
