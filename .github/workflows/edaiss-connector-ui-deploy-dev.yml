@@ -2,9 +2,10 @@ name: edaiss-connector-ui-deploy-dev
 
 #on: workflow_dispatch
 on:
-  pull_request:
+  push:
     branches:
       - develop
+  workflow_dispatch:
 
 # Permissions required for OIDC authentication
 permissions:
