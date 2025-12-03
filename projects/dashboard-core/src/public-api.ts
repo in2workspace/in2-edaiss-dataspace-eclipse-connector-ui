@@ -30,8 +30,8 @@ export * from './lib/common/connector-config-form/connector-config-form.componen
 export * from './lib/common/consumer-provider-switch/consumer-provider-switch.component';
 export * from './lib/common/multiselect-with-search/multiselect-with-search.component';
 export * from './lib/common/deletion-confirm/deletion-confirm.component';
-export * from './lib/common/json-object-table/json-object-table.component';
-export * from './lib/common/json-object-input/json-object-input.component';
+export { JsonObjectTableCustomComponent as JsonObjectTableComponent } from './lib/common/json-object-table/json-object-table-custom.component';
+export { JsonObjectInputCustomComponent as JsonObjectInputComponent } from './lib/common/json-object-input/json-object-input-custom.component';
 export * from './lib/common/data-address/data-address-form/data-address-form.component';
 export * from './lib/common/data-address/data-type-input/data-type-input.component';
 export * from './lib/common/data-address/fallback-data-type/fallback-data-type.component';

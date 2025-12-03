@@ -37,7 +37,7 @@ import { AssetCardComponent } from '../asset-card/asset-card.component';
   styleUrl: './asset-view.component.css',
 })
 export class AssetViewComponent implements OnInit, OnDestroy {
-  private readonly destroy$ = new Subject<void>();
+  protected readonly destroy$ = new Subject<void>();
 
   assets$: Observable<Asset[]> = of([]);
   filteredAssets$: Observable<Asset[]> = of([]);
@@ -46,9 +46,9 @@ export class AssetViewComponent implements OnInit, OnDestroy {
   pageItemCount = 15;
 
   constructor(
-    private readonly assetService: AssetService,
-    private readonly modalAndAlertService: ModalAndAlertService,
-    private readonly stateService: DashboardStateService,
+    protected readonly assetService: AssetService,
+    protected readonly modalAndAlertService: ModalAndAlertService,
+    protected readonly stateService: DashboardStateService,
   ) {
     this.stateService.currentEdcConfig$.pipe(takeUntil(this.destroy$)).subscribe(this.fetchAssets.bind(this));
   }
@@ -135,7 +135,7 @@ export class AssetViewComponent implements OnInit, OnDestroy {
     this.modalAndAlertService.openModal(JsonldViewerComponent, { jsonLdObject: asset });
   }
 
-  private fetchAssets() {
+  protected fetchAssets() {
     this.fetched = false;
     this.assets$ = this.filteredAssets$ = of([]);
     this.assets$ = this.filteredAssets$ = from(this.assetService.getAllAssets().finally(() => (this.fetched = true)));

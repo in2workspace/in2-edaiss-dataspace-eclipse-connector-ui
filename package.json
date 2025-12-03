@@ -44,6 +44,7 @@
     "@cypress/schematic": "^3.0.0",
     "@tailwindcss/postcss": "^4.1.1",
     "@types/jasmine": "~5.1.7",
+    "@types/uuid": "^10.0.0",
     "angular-eslint": "19.3.0",
     "cypress": "^14.3.3",
     "daisyui": "^5.0.12",

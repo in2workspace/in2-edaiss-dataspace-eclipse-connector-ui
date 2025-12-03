@@ -1,24 +1,8 @@
-/*
- *  Copyright (c) 2025 Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V.
- *
- *  This program and the accompanying materials are made available under the
- *  terms of the Apache License, Version 2.0 which is available at
- *  https://www.apache.org/licenses/LICENSE-2.0
- *
- *  SPDX-License-Identifier: Apache-2.0
- *
- *  Contributors:
- *       Fraunhofer-Gesellschaft zur Förderung der angewandten Forschung e.V. - initial API and implementation
- *
- */
-
-import { Component, EventEmitter, Input, OnChanges, Output } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
 import {
-  Asset,
   AssetInput,
   BaseDataAddress,
   compact,
-  DataAddress,
   EdcConnectorClientError,
   IdResponse,
 } from '@think-it-labs/edc-connector-client';
@@ -32,7 +16,7 @@ import {
   JsonObjectTableComponent,
 } from '@eclipse-edc/dashboard-core';
 import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { JsonValue } from '@angular-devkit/core';
+import { AssetCreateComponent } from './asset-create.component';
 
 @Component({
   selector: 'lib-asset-create',
@@ -47,52 +31,33 @@ import { JsonValue } from '@angular-devkit/core';
     JsonObjectInputComponent,
     DataAddressFormComponent,
   ],
-  templateUrl: './asset-create.component.html',
-  styleUrl: './asset-create.component.css',
+  templateUrl: './asset-create-custom.component.html',
+  styleUrl: './asset-create-custom.component.css',
 })
-export class AssetCreateComponent implements OnChanges {
-  @Input() asset?: Asset;
-  @Output() created = new EventEmitter<IdResponse>();
-  @Output() updated = new EventEmitter<void>();
-  mode: 'create' | 'update' = 'create';
+export class AssetCreateCustomComponent extends AssetCreateComponent implements OnChanges {
+  override assetForm: FormGroup;
 
-  errorMsg = '';
-
-  properties: Record<string, JsonValue> = {};
-  privateProperties: Record<string, JsonValue> = {};
-  dataAddress?: DataAddress;
-
-  assetForm: FormGroup;
-
-  constructor(
-    protected readonly assetService: AssetService,
-    protected readonly formBuilder: FormBuilder,
-  ) {
+  constructor(assetService: AssetService, formBuilder: FormBuilder) {
+    super(assetService, formBuilder);
     this.assetForm = this.formBuilder.group({
       id: [''],
       name: [''],
       contenttype: [''],
+      description: [''],
     });
   }
 
-  async ngOnChanges() {
-    if (this.asset) {
-      this.mode = 'update';
-      await this.updateAssetAndSyncForm();
-      this.assetForm.get('id')?.disable();
-    }
-  }
-
-  protected async updateAssetAndSyncForm() {
+  override async updateAssetAndSyncForm() {
     this.properties = await compact(this.asset!.properties);
     this.privateProperties = await compact(this.asset!.privateProperties);
     this.dataAddress = (await compact(this.asset!.dataAddress)) as unknown as BaseDataAddress;
     this.assetForm.get('id')?.setValue(this.asset!.id);
     this.assetForm.get('name')?.setValue(this.properties['name']);
     this.assetForm.get('contenttype')?.setValue(this.properties['contenttype']);
+    this.assetForm.get('description')?.setValue(this.properties['description']);
   }
 
-  createAsset(): void {
+  override createAsset(): void {
     if (this.assetForm.valid) {
       const assetInput: AssetInput = this.createAssetInput();
       if (this.mode === 'create') {
@@ -115,7 +80,7 @@ export class AssetCreateComponent implements OnChanges {
     }
   }
 
-  protected createAssetInput(): AssetInput {
+  protected override createAssetInput(): AssetInput {
     const asset: AssetInput = {
       dataAddress: this.dataAddress!,
       properties: this.properties,
@@ -130,6 +95,7 @@ export class AssetCreateComponent implements OnChanges {
     if (this.assetForm.value.contenttype) {
       asset.properties['contenttype'] = this.assetForm.value.contenttype;
     }
+    asset.properties['description'] = this.assetForm.value.description;
     return asset;
   }
 }

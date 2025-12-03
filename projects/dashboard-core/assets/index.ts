@@ -12,6 +12,6 @@
  *
  */
 
-export * from './src/asset-view/asset-view.component';
+export { AssetViewCustomComponent as AssetViewComponent } from './src/asset-view/asset-view-custom.component';
 export * from './src/asset-card/asset-card.component';
 export * from './src/asset.service';
