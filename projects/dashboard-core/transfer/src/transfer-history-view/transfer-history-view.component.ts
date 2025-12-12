@@ -60,9 +60,9 @@ export class TransferHistoryViewComponent implements OnInit, OnDestroy {
   contractType: 'CONSUMER' | 'PROVIDER' = 'CONSUMER';
 
   constructor(
-    private readonly transferProcessService: ContractAndTransferService,
-    private readonly modalAndAlertService: ModalAndAlertService,
-    private readonly stateService: DashboardStateService,
+    protected readonly transferProcessService: ContractAndTransferService,
+    protected readonly modalAndAlertService: ModalAndAlertService,
+    protected readonly stateService: DashboardStateService,
   ) {}
 
   async ngOnInit(): Promise<void> {
