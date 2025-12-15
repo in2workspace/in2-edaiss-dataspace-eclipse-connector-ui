@@ -9,8 +9,8 @@ import {
   PaginationComponent,
 } from '@eclipse-edc/dashboard-core';
 import { CatalogCardComponent } from '../catalog-card/catalog-card.component';
-import { CatalogRequestComponent } from '../catalog-request/catalog-request.component';
 import { CatalogViewComponent } from './catalog-view.component';
+import { CatalogRequestCustomComponent } from '../catalog-request/catalog-request-custom.component';
 
 @Component({
   selector: 'lib-catalog-view',
@@ -20,7 +20,7 @@ import { CatalogViewComponent } from './catalog-view.component';
     FilterInputComponent,
     PaginationComponent,
     CatalogCardComponent,
-    CatalogRequestComponent,
+    CatalogRequestCustomComponent,
     ItemCountSelectorComponent,
   ],
   templateUrl: './catalog-view-custom.component.html',

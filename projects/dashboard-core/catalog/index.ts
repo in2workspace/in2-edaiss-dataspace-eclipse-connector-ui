@@ -13,5 +13,5 @@
  */
 
 export { CatalogViewCustomComponent as CatalogViewComponent } from './src/catalog-view/catalog-view-custom.component';
-export * from './src/catalog-request-form/catalog-request-form.component';
+export { CatalogRequestFormCustomComponent as CatalogRequestFormComponent } from './src/catalog-request-form/catalog-request-form-custom.component';
 export * from './src/catalog.service';
