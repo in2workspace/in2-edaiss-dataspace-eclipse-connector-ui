@@ -1,3 +1,5 @@
+<!-- title: Developer Instructions -->
+
 ## Developer Instructions
 
 # Guidelines: Overwriting Components in the Angular Library
@@ -21,14 +23,17 @@ Example:
 
 Assume the original component is located in an app inside the library:
 
+```
 projects/dashboard-core/home/src/
 ├── home-view/home-view.component.ts
 ├── home-view/home-view.component.html
 ├── home-view/home-view.component.css
 └── index.ts
+```
 
 To overwrite it, you’ll create:
 
+```
 projects/dashboard-core/home/src/
 ├── home-view/home-view-custom.component.ts
 ├── home-view/home-view-custom.component.html
@@ -37,19 +42,24 @@ projects/dashboard-core/home/src/
 ├── home-view/home-view.component.html <-- Original component
 ├── home-view/home-view.component.css <-- Original component
 └── index.ts <-- Updated to export the custom component
+```
 
 Assume the original component, services is located inside the library:
 
+```
 projects/dashboard-core/src/lib/
 ├── services/dashboard-state.service.ts
 └── public-api.ts
+```
 
 To overwrite it, you’ll create:
 
+```
 projects/dashboard-core/src/lib/
 ├── services/dashboard-state-custom.service.ts
 ├── services/dashboard-state.service.ts <-- Original service
 └── public-api.ts <-- Updated to export the custom service
+```
 
 ---
 
@@ -59,8 +69,9 @@ projects/dashboard-core/src/lib/
 
 Create a new file named `home-view-custom.component.ts` in the same folder as the original component.
 
----typescript
+**typescript**
 
+```
 import { Component } from '@angular/core';
 import { DashboardStateService } from '@eclipse-edc/dashboard-core';
 import { AsyncPipe } from '@angular/common';
@@ -87,6 +98,7 @@ console.log('Custom behavior');
 
 // You can add new methods
 }
+```
 
 ### 2. Update the HTML and CSS
 
@@ -99,10 +111,12 @@ Copy the same Template and Styles than the original component and then you can m
 Open the index.ts file and replace the export of the original component:
 
 // Replace this line:
-// export \* from './src/home-view/home-view.component';
+
+`export * from './src/home-view/home-view.component';`
 
 // With this line:
-export { HomeViewCustomComponent as HomeViewComponent } from './home-view-custom.component';
+
+`export { HomeViewCustomComponent as HomeViewComponent } from './home-view-custom.component';`
 
 This ensures that any consumer importing HomeViewComponent will receive your customized implementation.
 
@@ -110,9 +124,11 @@ This ensures that any consumer importing HomeViewComponent will receive your cus
 
 From your workspace root, run (Terminal):
 
-npm run lib-build
-//or
-npm run lib-start
+`npm run lib-build`
+
+or
+
+`npm run lib-start`
 
 The output library (dist/@eclipse-edc/dashboard-core) will now contain your custom HomeViewComponent, which replaces the original one everywhere it’s imported from the library.
 
