@@ -68,6 +68,7 @@ projects/dashboard-core/src/lib/
 ### 1. Create the Custom Component
 
 Create a new file named `home-view-custom.component.ts` in the same folder as the original component.
+If at the original class there are "private" methods, services, etc... should be changed to "protected"
 
 **typescript**
 
@@ -80,15 +81,22 @@ import { Router } from '@angular/router';
 @Component({
 selector: 'lib-home-view', // Keep the same selector
 imports: [AsyncPipe],
-templateUrl: './home-view-custom.component.html',
-styleUrls: ['./home-view-custom.component.scss'],
+templateUrl: './home-view-custom.component.html', // Modify path to new custom template
+styleUrls: ['./home-view-custom.component.scss'], // Modify path to new custom styles
 })
 export class HomeViewCustomComponent extends HomeViewComponent {
 // ✅ You can override properties, lifecycle hooks, or methods here.
 
+constructor(
+    public override readonly stateService: DashboardStateService, // add "override"
+    protected override readonly router: Router, //If at the original class is "private", you should change it to protected at both files
+  ) {
+    super(stateService, router); //Add super()
+  }
+
 override ngOnInit(): void {
-super.ngOnInit();
-console.log('Custom HomeView component loaded');
+  super.ngOnInit();
+  console.log('Custom HomeView component loaded');
 }
 
 // Example of overriding a method
@@ -116,7 +124,7 @@ Open the index.ts file and replace the export of the original component:
 
 // With this line:
 
-`export { HomeViewCustomComponent as HomeViewComponent } from './home-view-custom.component';`
+`export { HomeViewCustomComponent as HomeViewComponent } from './src/home-view/home-view-custom.component';`
 
 This ensures that any consumer importing HomeViewComponent will receive your customized implementation.
 
