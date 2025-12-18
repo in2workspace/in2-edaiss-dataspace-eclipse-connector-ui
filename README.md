@@ -1,3 +1,9 @@
+# EDAISS EDC Data Dashboard
+
+## Developer instructions
+
+All developers should read the developers instructions for EDAISS Portal at this link: [Developer Instructions](https://github.com/in2workspace/in2-edaiss-dataspace-connector-ui/blob/main/docs/developer/developer_instructions.md)
+
 # EDC Data Dashboard
 
 ℹ️ _This repository does not contain production-grade code and is only intended for demonstration purposes._
