@@ -1,4 +1,4 @@
-# EDAISS EDC Data Dashboard
+# EDAISS Data Dashboard
 
 ## Developer instructions
 
