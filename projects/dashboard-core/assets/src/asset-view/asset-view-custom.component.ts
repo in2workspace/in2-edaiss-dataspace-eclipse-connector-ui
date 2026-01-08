@@ -10,14 +10,14 @@ import {
   ModalAndAlertService,
   PaginationComponent,
 } from '@eclipse-edc/dashboard-core';
-import { AssetCardComponent } from '../asset-card/asset-card.component';
+import { AssetCardCustomComponent } from '../asset-card/asset-card-custom.component';
 import { AssetViewComponent } from './asset-view.component';
 import { AssetCreateCustomComponent } from '../asset-create/asset-create-custom.component';
 
 @Component({
   selector: 'lib-asset-view',
   standalone: true,
-  imports: [AsyncPipe, FilterInputComponent, PaginationComponent, AssetCardComponent, ItemCountSelectorComponent],
+  imports: [AsyncPipe, FilterInputComponent, PaginationComponent, AssetCardCustomComponent, ItemCountSelectorComponent],
   templateUrl: './asset-view-custom.component.html',
   styleUrl: './asset-view-custom.component.css',
 })
