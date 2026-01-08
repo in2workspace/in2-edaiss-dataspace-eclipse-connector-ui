@@ -8,7 +8,7 @@ import {
   ModalAndAlertService,
   PaginationComponent,
 } from '@eclipse-edc/dashboard-core';
-import { CatalogCardComponent } from '../catalog-card/catalog-card.component';
+import { CatalogCardCustomComponent } from '../catalog-card/catalog-card-custom.component';
 import { CatalogViewComponent } from './catalog-view.component';
 import { CatalogRequestCustomComponent } from '../catalog-request/catalog-request-custom.component';
 
@@ -19,7 +19,7 @@ import { CatalogRequestCustomComponent } from '../catalog-request/catalog-reques
     AsyncPipe,
     FilterInputComponent,
     PaginationComponent,
-    CatalogCardComponent,
+    CatalogCardCustomComponent,
     CatalogRequestCustomComponent,
     ItemCountSelectorComponent,
   ],
