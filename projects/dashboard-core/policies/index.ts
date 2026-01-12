@@ -13,6 +13,6 @@
  */
 
 export { PolicyViewCustomComponent as PolicyViewComponent } from './src/policy-view/policy-view-custom.component';
-export * from './src/policy-card/policy-card.component';
+export { PolicyCardCustomComponent as PolicyCardComponent } from './src/policy-card/policy-card-custom.component';
 export * from './src/policy-create/policy-create.component';
 export * from './src/policy.service';
