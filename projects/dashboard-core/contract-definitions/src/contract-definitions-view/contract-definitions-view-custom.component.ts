@@ -8,7 +8,7 @@ import {
   ModalAndAlertService,
   PaginationComponent,
 } from '@eclipse-edc/dashboard-core';
-import { ContractDefinitionCardComponent } from '../contract-definition-card/contract-definition-card.component';
+import { ContractDefinitionCardCustomComponent } from '../contract-definition-card/contract-definition-card-custom.component';
 import { ContractDefinitionsViewComponent } from './contract-definitions-view.component';
 
 @Component({
@@ -17,7 +17,7 @@ import { ContractDefinitionsViewComponent } from './contract-definitions-view.co
     AsyncPipe,
     PaginationComponent,
     FilterInputComponent,
-    ContractDefinitionCardComponent,
+    ContractDefinitionCardCustomComponent,
     ItemCountSelectorComponent,
   ],
   templateUrl: './contract-definitions-view-custom.component.html',
