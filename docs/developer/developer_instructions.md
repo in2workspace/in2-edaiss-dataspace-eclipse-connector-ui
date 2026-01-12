@@ -128,6 +128,8 @@ Open the index.ts file and replace the export of the original component:
 
 This ensures that any consumer importing HomeViewComponent will receive your customized implementation.
 
+Check if the component is imported by another component so must be updated too.
+
 ### 4. Rebuild the Library
 
 From your workspace root, run (Terminal):
