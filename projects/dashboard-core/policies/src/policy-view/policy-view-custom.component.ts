@@ -8,13 +8,19 @@ import {
   ModalAndAlertService,
   PaginationComponent,
 } from '@eclipse-edc/dashboard-core';
-import { PolicyCardComponent } from '../policy-card/policy-card.component';
+import { PolicyCardCustomComponent } from '../policy-card/policy-card-custom.component';
 import { PolicyViewComponent } from './policy-view.component';
 
 @Component({
   selector: 'lib-policy-view',
   standalone: true,
-  imports: [AsyncPipe, FilterInputComponent, PaginationComponent, PolicyCardComponent, ItemCountSelectorComponent],
+  imports: [
+    AsyncPipe,
+    FilterInputComponent,
+    PaginationComponent,
+    PolicyCardCustomComponent,
+    ItemCountSelectorComponent,
+  ],
   templateUrl: './policy-view-custom.component.html',
   styleUrl: './policy-view-custom.component.css',
 })
