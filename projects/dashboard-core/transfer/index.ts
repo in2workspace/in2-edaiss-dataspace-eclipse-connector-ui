@@ -12,7 +12,7 @@
  *
  */
 
-export * from './src/contract-agreement-view/contract-view.component';
-export * from './src/contract-agreement-card/contract-agreement-card.component';
+export { ContractViewCustomComponent as ContractViewComponent } from './src/contract-agreement-view/contract-view-custom.component';
+export { ContractAgreementCardCustomComponent as ContractAgreementCardComponent } from './src/contract-agreement-card/contract-agreement-card-custom.component';
 export { TransferHistoryViewCustomComponent as TransferHistoryViewComponent } from './src/transfer-history-view/transfer-history-view-custom.component';
 export * from './src/contract-and-transfer.service';

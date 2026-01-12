@@ -57,9 +57,9 @@ export class ContractViewComponent implements OnInit, OnDestroy {
   contractType: 'CONSUMER' | 'PROVIDER' = 'CONSUMER';
 
   constructor(
-    private readonly contractAndTransferService: ContractAndTransferService,
-    private readonly modalAndAlertService: ModalAndAlertService,
-    private readonly stateService: DashboardStateService,
+    protected readonly contractAndTransferService: ContractAndTransferService,
+    protected readonly modalAndAlertService: ModalAndAlertService,
+    protected readonly stateService: DashboardStateService,
   ) {}
 
   async ngOnInit() {
