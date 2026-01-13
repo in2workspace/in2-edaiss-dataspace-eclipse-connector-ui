@@ -12,4 +12,4 @@
  *
  */
 
-export * from './src/home-view/home-view.component';
+export { HomeViewCustomComponent as HomeViewComponent } from './src/home-view/home-view-custom.component';

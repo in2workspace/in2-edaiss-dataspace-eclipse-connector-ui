@@ -41,7 +41,7 @@ export class TransferHistoryTableComponent implements OnChanges {
 
   stateType: Record<string, string> = {};
 
-  constructor(private readonly modalAndAlertService: ModalAndAlertService) {}
+  constructor(protected readonly modalAndAlertService: ModalAndAlertService) {}
 
   async ngOnChanges(changes: SimpleChanges) {
     if (changes['transferProcesses']) {
@@ -55,7 +55,7 @@ export class TransferHistoryTableComponent implements OnChanges {
     }
   }
 
-  private getStateType(state: string) {
+  protected getStateType(state: string) {
     if (this.validStates.has(state)) {
       return 'okay';
     } else if (this.exceptionStates.has(state)) {

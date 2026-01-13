@@ -8,6 +8,7 @@
     "declarationMap": true,
     "inlineSources": true,
     "types": []
+    //"resolveJsonModule": true
   },
   "exclude": ["**/*.spec.ts"]
 }

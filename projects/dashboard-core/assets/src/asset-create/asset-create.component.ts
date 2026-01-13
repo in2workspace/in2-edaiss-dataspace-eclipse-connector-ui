@@ -65,8 +65,8 @@ export class AssetCreateComponent implements OnChanges {
   assetForm: FormGroup;
 
   constructor(
-    private readonly assetService: AssetService,
-    private readonly formBuilder: FormBuilder,
+    protected readonly assetService: AssetService,
+    protected readonly formBuilder: FormBuilder,
   ) {
     this.assetForm = this.formBuilder.group({
       id: [''],
@@ -83,7 +83,7 @@ export class AssetCreateComponent implements OnChanges {
     }
   }
 
-  private async updateAssetAndSyncForm() {
+  protected async updateAssetAndSyncForm() {
     this.properties = await compact(this.asset!.properties);
     this.privateProperties = await compact(this.asset!.privateProperties);
     this.dataAddress = (await compact(this.asset!.dataAddress)) as unknown as BaseDataAddress;
@@ -115,7 +115,7 @@ export class AssetCreateComponent implements OnChanges {
     }
   }
 
-  private createAssetInput(): AssetInput {
+  protected createAssetInput(): AssetInput {
     const asset: AssetInput = {
       dataAddress: this.dataAddress!,
       properties: this.properties,

@@ -16,8 +16,19 @@ import { defineConfig } from 'cypress';
 
 export default defineConfig({
   projectId: '5bofid',
+  reporter: 'mochawesome',
+  reporterOptions: {
+    reportDir: 'cypress/reports',
+    overwrite: false,
+    html: false,
+    json: true,
+  },
   e2e: {
     baseUrl: 'http://localhost:4200',
+    setupNodeEvents(on, config) {
+      return config;
+    },
+    //experimentalStudio: true,
   },
 
   component: {

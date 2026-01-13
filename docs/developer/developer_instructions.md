@@ -1,3 +1,5 @@
+<!-- title: Developer Instructions -->
+
 ## Developer Instructions
 
 # Guidelines: Overwriting Components in the Angular Library
@@ -21,6 +23,7 @@ Example:
 
 Assume the original component is located in an app inside the library:
 
+```
 projects/dashboard-core/home/src/
 
 ├── home-view/home-view.component.ts
@@ -30,9 +33,11 @@ projects/dashboard-core/home/src/
 ├── home-view/home-view.component.css
 
 └── index.ts
+```
 
 To overwrite it, you’ll create:
 
+```
 projects/dashboard-core/home/src/
 ├── home-view/home-view-custom.component.ts
 ├── home-view/home-view-custom.component.html
@@ -41,19 +46,24 @@ projects/dashboard-core/home/src/
 ├── home-view/home-view.component.html <-- Original component
 ├── home-view/home-view.component.css <-- Original component
 └── index.ts <-- Updated to export the custom component
+```
 
 Assume the original component, services is located inside the library:
 
+```
 projects/dashboard-core/src/lib/
 ├── services/dashboard-state.service.ts
 └── public-api.ts
+```
 
 To overwrite it, you’ll create:
 
+```
 projects/dashboard-core/src/lib/
 ├── services/dashboard-state-custom.service.ts
 ├── services/dashboard-state.service.ts <-- Original service
 └── public-api.ts <-- Updated to export the custom service
+```
 
 ---
 
@@ -62,9 +72,11 @@ projects/dashboard-core/src/lib/
 ### 1. Create the Custom Component
 
 Create a new file named `home-view-custom.component.ts` in the same folder as the original component.
+If at the original class there are "private" methods, services, etc... should be changed to "protected"
 
----typescript
+**typescript**
 
+```
 import { Component } from '@angular/core';
 import { DashboardStateService } from '@eclipse-edc/dashboard-core';
 import { AsyncPipe } from '@angular/common';
@@ -73,15 +85,22 @@ import { Router } from '@angular/router';
 @Component({
 selector: 'lib-home-view', // Keep the same selector
 imports: [AsyncPipe],
-templateUrl: './home-view-custom.component.html',
-styleUrls: ['./home-view-custom.component.scss'],
+templateUrl: './home-view-custom.component.html', // Modify path to new custom template
+styleUrls: ['./home-view-custom.component.scss'], // Modify path to new custom styles
 })
 export class HomeViewCustomComponent extends HomeViewComponent {
 // ✅ You can override properties, lifecycle hooks, or methods here.
 
+constructor(
+    public override readonly stateService: DashboardStateService, // add "override"
+    protected override readonly router: Router, //If at the original class is "private", you should change it to protected at both files
+  ) {
+    super(stateService, router); //Add super()
+  }
+
 override ngOnInit(): void {
-super.ngOnInit();
-console.log('Custom HomeView component loaded');
+  super.ngOnInit();
+  console.log('Custom HomeView component loaded');
 }
 
 // Example of overriding a method
@@ -91,6 +110,7 @@ console.log('Custom behavior');
 
 // You can add new methods
 }
+```
 
 ### 2. Update the HTML and CSS
 
@@ -103,20 +123,26 @@ Copy the same Template and Styles than the original component and then you can m
 Open the index.ts file and replace the export of the original component:
 
 // Replace this line:
-// export \* from './src/home-view/home-view.component';
+
+`export * from './src/home-view/home-view.component';`
 
 // With this line:
-export { HomeViewCustomComponent as HomeViewComponent } from './home-view-custom.component';
+
+`export { HomeViewCustomComponent as HomeViewComponent } from './src/home-view/home-view-custom.component';`
 
 This ensures that any consumer importing HomeViewComponent will receive your customized implementation.
+
+Check if the component is imported by another component so must be updated too.
 
 ### 4. Rebuild the Library
 
 From your workspace root, run (Terminal):
 
-npm run lib-build
-//or
-npm run lib-start
+`npm run lib-build`
+
+or
+
+`npm run lib-start`
 
 The output library (dist/@eclipse-edc/dashboard-core) will now contain your custom HomeViewComponent, which replaces the original one everywhere it’s imported from the library.
 

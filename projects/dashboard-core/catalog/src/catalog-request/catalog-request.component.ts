@@ -40,7 +40,7 @@ export class CatalogRequestComponent implements OnDestroy {
 
   constructor(
     public readonly stateService: DashboardStateService,
-    private readonly modalAndAlertService: ModalAndAlertService,
+    protected readonly modalAndAlertService: ModalAndAlertService,
   ) {
     this.stateService.currentEdcConfig$.pipe(takeUntil(this.destroy$)).subscribe(this.resetSelector.bind(this));
   }
