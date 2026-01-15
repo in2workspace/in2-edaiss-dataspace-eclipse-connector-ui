@@ -44,3 +44,4 @@ export * from './lib/models/edc-config';
 export * from './lib/models/json-value';
 export * from './lib/models/pair';
 export * from './lib/models/constants';
+export * from './lib/version';
