@@ -7,16 +7,23 @@ This file will not cover changes about documentation, code clean-up, samples, or
 (respectively milestone), the core features are highlighted. Relevant changes to existing implementations can be found
 in the detailed section referring to by linking pull requests or issues.
 
-## [Unreleased]
+## [1.0.0]
 
-### Overview
+### Changed
 
-### Detailed Changes
+- Header: logo EDAISS.
 
-#### Added
+### Added
 
-#### Changed
+- Favicon.
+- Footer.
+- EDAISS Library Version.
+- Health Care portal: Data Destination column at Transfer History.
 
-#### Removed
+### Removed
 
-#### Fixed
+- info and detail buttons (json) at Assets, Policies, Contracts.
+
+### Fixed
+
+- Pagination elements selector per page not working.
