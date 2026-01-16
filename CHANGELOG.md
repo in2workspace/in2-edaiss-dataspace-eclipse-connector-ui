@@ -18,11 +18,13 @@ in the detailed section referring to by linking pull requests or issues.
 - Favicon.
 - Footer.
 - EDAISS Library Version.
-- Health Care portal: Data Destination column at Transfer History.
+- Public Health portal: Data Destination column at Transfer History.
+- Asset description field.
 
 ### Removed
 
 - info and detail buttons (json) at Assets, Policies, Contracts.
+- Catalog: request manually Counter Party DID field
 
 ### Fixed
 
