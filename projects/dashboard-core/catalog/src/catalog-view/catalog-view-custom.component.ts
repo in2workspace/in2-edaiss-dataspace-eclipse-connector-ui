@@ -11,6 +11,10 @@ import {
 import { CatalogCardCustomComponent } from '../catalog-card/catalog-card-custom.component';
 import { CatalogViewComponent } from './catalog-view.component';
 import { CatalogRequestCustomComponent } from '../catalog-request/catalog-request-custom.component';
+import { CatalogDataset } from '../catalog-dataset';
+import { IdResponse } from '@think-it-labs/edc-connector-client';
+import { ContractNegotiationCustomComponent } from '../contract-negotiation/contract-negotiation-custom.component';
+import { NegotiationProgressComponent } from '../negotiation-progress/negotiation-progress.component';
 
 @Component({
   selector: 'lib-catalog-view',
@@ -33,5 +37,18 @@ export class CatalogViewCustomComponent extends CatalogViewComponent {
     modalAndAlertService: ModalAndAlertService,
   ) {
     super(stateService, catalogService, modalAndAlertService);
+  }
+
+  override negotiateContract(catalogDataset: CatalogDataset) {
+    const callbacks = {
+      negotiationRequested: (id: IdResponse) => {
+        this.modalAndAlertService.openModal(NegotiationProgressComponent, { negotiationId: id }, undefined, true);
+      },
+    };
+    this.modalAndAlertService.openModal(
+      ContractNegotiationCustomComponent,
+      { catalogDataset: catalogDataset },
+      callbacks,
+    );
   }
 }

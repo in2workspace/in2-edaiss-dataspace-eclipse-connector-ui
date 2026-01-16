@@ -39,7 +39,7 @@ export class ContractNegotiationComponent implements OnChanges {
   offerId = '';
   selectedOffer = new BehaviorSubject<string[]>(['']);
 
-  constructor(private readonly catalogService: CatalogService) {}
+  constructor(protected readonly catalogService: CatalogService) {}
 
   async ngOnChanges(changes: SimpleChanges) {
     if (changes['catalogDataset']) {

@@ -79,8 +79,8 @@ export class CatalogViewComponent implements OnInit, OnDestroy {
 
   constructor(
     public stateService: DashboardStateService,
-    private readonly catalogService: CatalogService,
-    private readonly modalAndAlertService: ModalAndAlertService,
+    protected readonly catalogService: CatalogService,
+    protected readonly modalAndAlertService: ModalAndAlertService,
   ) {}
 
   async ngOnInit() {
