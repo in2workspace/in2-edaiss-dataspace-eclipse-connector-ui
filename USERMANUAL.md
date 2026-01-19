@@ -1,4 +1,4 @@
-![Logo EDAISS](Logo_EDAISS_Transparent.png)
+![Logo EDAISS](./public/Logo_EDAISS_Transparent.png)
 
 # EDAISS User Manual
 
