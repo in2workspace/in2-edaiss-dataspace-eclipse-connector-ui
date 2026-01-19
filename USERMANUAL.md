@@ -6,19 +6,19 @@
 
 At the top of the website, we find the connector name and a button to select the portal theme.
 
-![Top Bar](images/user_manual/top-bar.jpg)
+![Top Bar](./public/images/user_manual/top-bar.jpg)
 
 ## Assets
 
 In the top bar we can find the asset search, create asset button, how many items to show per page and pagination.
 
-![Asset Top Bar](images/user_manual/asset-top-bar.png)
+![Asset Top Bar](./public/images/user_manual/asset-top-bar.png)
 
 ## Create Asset
 
 To create an asset, we must first go to the "Assets" tab in the side menu. In the upper right corner, we can find a button that says "+ Create". We click on the button and a modal with a form will open.
 
-![Create Asset](images/user_manual/create-asset.png)
+![Create Asset](./public/images/user_manual/create-asset.png)
 
 The form contains the following fields that must be filled in:
 
@@ -32,20 +32,20 @@ Method: GET
 Base URL: The complete URL of the API Provider.  
 Then click the "Create Asset" button.
 
-![Create Asset Modal](images/user_manual/create-asset-modal.png)
+![Create Asset Modal](./public/images/user_manual/create-asset-modal.png)
 
 ## Edit Asset
 
 On the asset card, we must click on the edit button and a modal will open with the form for editing the asset; the only non-editable field is the "ID".
 
-![Edit Asset](images/user_manual/edit-asset.png)
+![Edit Asset](./public/images/user_manual/edit-asset.png)
 
-![Edit Asset Modal](images/user_manual/edit-asset-modal.png)
+![Edit Asset Modal](./public/images/user_manual/edit-asset-modal.png)
 
 ## Delete Asset
 
 On the asset card, we must click on the delete button and a modal will open asking for confirmation to delete the asset.
 
-![Delete Asset](images/user_manual/delete-asset.png)
+![Delete Asset](./public/images/user_manual/delete-asset.png)
 
-![Delete Asset Modal](images/user_manual/delete-asset-modal.png)
+![Delete Asset Modal](./public/images/user_manual/delete-asset-modal.png)
