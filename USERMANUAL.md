@@ -56,7 +56,7 @@ On the asset card, we must click on the delete button and a modal will open aski
 
 ![Delete Asset Modal](./public/images/user_manual/delete-asset-modal.png)
 
-## 2. policy Definitions
+## 2. Policy Definitions
 
 In the top bar we can find the policy search, create policy button, how many items to show per page and pagination.
 
@@ -100,3 +100,48 @@ On the policy card, we must click on the delete button and a modal will open ask
 ![Delete Policy](./public/images/user_manual/delete-policy.png)
 
 ![Delete Policy Modal](./public/images/user_manual/delete-policy-modal.png)
+
+## 3. Contract Definitions
+
+In the top bar we can find the contract search, create contract button, how many items to show per page and pagination.
+
+![Contract Top Bar](./public/images/user_manual/contract-top-bar.png)
+
+### Create Contract
+
+To create an contract, we must first go to the "Contract Definitions" tab in the side menu. In the upper right corner, we can find a button that says "+ Create". We click on the button and a modal with a form will open.
+
+![Create Contract](./public/images/user_manual/create-contract.png)
+
+The form contains the following fields that must be filled in:
+
+Common Fields:
+
+- ID
+
+(The ID field is optional, but it is recommended to fill in.)
+
+Policy Selections:
+
+- Access Policy: Select the policy.
+- Contract Policy: Select the policy.
+
+Asset Selection: Select the asset.
+
+![Create Contract Modal](./public/images/user_manual/create-contract-modal.png)
+
+### Edit Contract
+
+On the contract card, we must click on the edit button and a modal will open with the form for editing the contract; the only non-editable field is the "ID".
+
+![Edit Contract](./public/images/user_manual/edit-contract.png)
+
+![Edit Contract Modal](./public/images/user_manual/edit-contract-modal.png)
+
+### Delete Contract
+
+On the contract card, we must click on the delete button and a modal will open asking for confirmation to delete the contract.
+
+![Delete Contract](./public/images/user_manual/delete-contract.png)
+
+![Delete Contract Modal](./public/images/user_manual/delete-contract-modal.png)
