@@ -8,7 +8,7 @@ At the top of the website, we find the connector name and a button to select the
 
 ![Top Bar](./public/images/user_manual/top-bar.jpg)
 
-1. ## Assets
+## 1. Assets
 
 In the top bar we can find the asset search, create asset button, how many items to show per page and pagination.
 
@@ -56,7 +56,7 @@ On the asset card, we must click on the delete button and a modal will open aski
 
 ![Delete Asset Modal](./public/images/user_manual/delete-asset-modal.png)
 
-2. ## policy Definitions
+## 2. policy Definitions
 
 In the top bar we can find the policy search, create policy button, how many items to show per page and pagination.
 
