@@ -10,13 +10,13 @@ At the top of the website, we find the connector name and a button to select the
 
 # 1. Provide Assets
 
-## a. Assets
+## 1.1. Assets
 
 In the top bar we can find the asset search, create asset button, how many items to show per page and pagination.
 
 ![Asset Top Bar](./public/images/user_manual/asset-top-bar.png)
 
-### Create Asset
+### 1.1.1. Create Asset
 
 To create an asset, we must first go to the "Assets" tab in the side menu. In the upper right corner, we can find a button that says "+ Create". We click on the button and a modal with a form will open.
 
@@ -42,7 +42,7 @@ Next, select the "Data Address", which should be:
 
 ![Create Asset Modal](./public/images/user_manual/create-asset-modal.png)
 
-### Edit Asset
+### 1.1.2. Edit Asset
 
 On the asset card, we must click on the edit button and a modal will open with the form for editing the asset; the only non-editable field is the "ID".
 
@@ -50,7 +50,7 @@ On the asset card, we must click on the edit button and a modal will open with t
 
 ![Edit Asset Modal](./public/images/user_manual/edit-asset-modal.png)
 
-### Delete Asset
+### 1.1.3. Delete Asset
 
 On the asset card, we must click on the delete button and a modal will open asking for confirmation to delete the asset.
 
@@ -58,13 +58,13 @@ On the asset card, we must click on the delete button and a modal will open aski
 
 ![Delete Asset Modal](./public/images/user_manual/delete-asset-modal.png)
 
-## b. Policy Definitions
+## 1.2. Policy Definitions
 
 In the top bar we can find the policy search, create policy button, how many items to show per page and pagination.
 
 ![Policy Top Bar](./public/images/user_manual/policy-top-bar.png)
 
-### Create Policy
+### 1.2.1. Create Policy
 
 To create an policy, we must first go to the "Policy Definitions" tab in the side menu. In the upper right corner, we can find a button that says "+ Create". We click on the button and a modal with a form will open.
 
@@ -87,7 +87,7 @@ Properties:
 
 ![Create Policy Modal](./public/images/user_manual/create-policy-modal.png)
 
-### Edit Policy
+### 1.2.2. Edit Policy
 
 On the policy card, we must click on the edit button and a modal will open with the form for editing the policy; the only non-editable field is the "ID".
 
@@ -95,7 +95,7 @@ On the policy card, we must click on the edit button and a modal will open with 
 
 ![Edit Policy Modal](./public/images/user_manual/edit-policy-modal.png)
 
-### Delete Policy
+### 1.2.3. Delete Policy
 
 On the policy card, we must click on the delete button and a modal will open asking for confirmation to delete the policy.
 
@@ -103,13 +103,13 @@ On the policy card, we must click on the delete button and a modal will open ask
 
 ![Delete Policy Modal](./public/images/user_manual/delete-policy-modal.png)
 
-## c. Contract Definitions
+## 1.3. Contract Definitions
 
 In the top bar we can find the contract search, create contract button, how many items to show per page and pagination.
 
 ![Contract Top Bar](./public/images/user_manual/contract-top-bar.png)
 
-### Create Contract
+### 1.3.1. Create Contract
 
 To create an contract, we must first go to the "Contract Definitions" tab in the side menu. In the upper right corner, we can find a button that says "+ Create". We click on the button and a modal with a form will open.
 
@@ -132,7 +132,7 @@ Asset Selection: Select the asset.
 
 ![Create Contract Modal](./public/images/user_manual/create-contract-modal.png)
 
-### Edit Contract
+### 1.3.2. Edit Contract
 
 On the contract card, we must click on the edit button and a modal will open with the form for editing the contract; the only non-editable field is the "ID".
 
@@ -140,7 +140,7 @@ On the contract card, we must click on the edit button and a modal will open wit
 
 ![Edit Contract Modal](./public/images/user_manual/edit-contract-modal.png)
 
-### Delete Contract
+### 1.3.3. Delete Contract
 
 On the contract card, we must click on the delete button and a modal will open asking for confirmation to delete the contract.
 
@@ -150,7 +150,7 @@ On the contract card, we must click on the delete button and a modal will open a
 
 # 2. Request Assets
 
-## a. Catalog
+## 2.1. Catalog
 
 At the catalog top bar we can find a button to request an asset manually, if you click the button a modal will open.
 
@@ -174,9 +174,11 @@ Then will open a modal with the negotiation process.
 
 # 3. Transfer Assets
 
-## a. Contracts
+## 3.1. Contracts
 
 In the "Contracts" tab we can see all the assets that have been negotiated.
+
+At the top we can find the top bar where you can search for a contract, select if is "Consuming" or "Providing", items per page to show and pagination.
 
 ![Contracts Negotiated](./public/images/user_manual/contracts-negotiated.png)
 
@@ -184,8 +186,42 @@ To transfer an asset, we must click on the "Transfer" button.
 
 ![Contract Transfer](./public/images/user_manual/contract-transfer.png)
 
+## 3.2. Transfer
+
 Then a modal opens where we will put the data where we are going to transfer the asset.
 
 ![Contract Transfer Modal](./public/images/user_manual/contract-transfer-modal.png)
 
-## b. Transfer History
+The form fields to complete are as follows:
+
+Contract: Contract details to be transferred.
+
+Transfer Types offered by the Provider:
+
+- Transfer Type: HttpData-PUSH
+
+Destination Data Address:
+
+- Method: POST
+- Base URL: The complete URL of the API provider
+
+Then we can click the "Start Transfer" button.
+
+## 3.3. Transfer History
+
+At the top we can find the top bar where you can search for a transfer, select if is "Consuming" or "Providing", items per page to show and pagination.
+
+![Transfer Top Bar](./public/images/user_manual/transfer-top-bar.png)
+
+In the "Transfer History" tab, we can find the table with the list of transfers made; the form fields are as follows:
+
+- Transfer ID
+- State Changed
+- State
+- Transfer Type
+- Asset ID
+- Contract ID
+- Link to the asset sent (just at the Public Health portal)
+- Info and Delete buttons
+
+![Transfer List](./public/images/user_manual/transfer-list.png)
