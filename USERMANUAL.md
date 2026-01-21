@@ -8,7 +8,9 @@ At the top of the website, we find the connector name and a button to select the
 
 ![Top Bar](./public/images/user_manual/top-bar.jpg)
 
-## 1. Assets
+# 1. Provide Assets
+
+## a. Assets
 
 In the top bar we can find the asset search, create asset button, how many items to show per page and pagination.
 
@@ -56,7 +58,7 @@ On the asset card, we must click on the delete button and a modal will open aski
 
 ![Delete Asset Modal](./public/images/user_manual/delete-asset-modal.png)
 
-## 2. Policy Definitions
+## b. Policy Definitions
 
 In the top bar we can find the policy search, create policy button, how many items to show per page and pagination.
 
@@ -101,7 +103,7 @@ On the policy card, we must click on the delete button and a modal will open ask
 
 ![Delete Policy Modal](./public/images/user_manual/delete-policy-modal.png)
 
-## 3. Contract Definitions
+## c. Contract Definitions
 
 In the top bar we can find the contract search, create contract button, how many items to show per page and pagination.
 
@@ -145,3 +147,45 @@ On the contract card, we must click on the delete button and a modal will open a
 ![Delete Contract](./public/images/user_manual/delete-contract.png)
 
 ![Delete Contract Modal](./public/images/user_manual/delete-contract-modal.png)
+
+# 2. Request Assets
+
+## a. Catalog
+
+At the catalog top bar we can find a button to request an asset manually, if you click the button a modal will open.
+
+![Catalog Request](./public/images/user_manual/catalog-request.png)
+
+![Catalog Request Modal](./public/images/user_manual/catalog-request-modal.png)
+
+At the Counter Party Address we must enter the consumer API URL, then we can see all the assets available to negotiate.
+
+To negotiate an asset we have to click at the "Negotiate" button at the card.
+
+![Catalog Negotiate](./public/images/user_manual/catalog-negotiate.png)
+
+This will open a modal where we can select an offer and then click at the button "Negotiate" at the modal.
+
+![Catalog Negotiate Modal](./public/images/user_manual/catalog-negotiate-modal.png)
+
+Then will open a modal with the negotiation process.
+
+![Contract Negotiation](./public/images/user_manual/contract-negotiation.png)
+
+# 3. Transfer Assets
+
+## a. Contracts
+
+In the "Contracts" tab we can see all the assets that have been negotiated.
+
+![Contracts Negotiated](./public/images/user_manual/contracts-negotiated.png)
+
+To transfer an asset, we must click on the "Transfer" button.
+
+![Contract Transfer](./public/images/user_manual/contract-transfer.png)
+
+Then a modal opens where we will put the data where we are going to transfer the asset.
+
+![Contract Transfer Modal](./public/images/user_manual/contract-transfer-modal.png)
+
+## b. Transfer History
