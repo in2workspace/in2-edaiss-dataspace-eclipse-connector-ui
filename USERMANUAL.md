@@ -68,7 +68,7 @@ At the catalog top bar we can find a button to request an asset manually, if you
 
 ![Catalog Request Modal](./public/images/user_manual/catalog-request-modal.png)
 
-At the Counter Party Address we must enter the consumer API URL, then we can see all the assets available to negotiate.
+At the Counter Party Address we must enter the connector URL, then we can see all the assets available to negotiate.
 
 To negotiate an asset we have to click at the "Negotiate" button at the card.
 
