@@ -158,7 +158,7 @@ At the catalog top bar we can find a button to request an asset manually, if you
 
 ![Catalog Request Modal](./public/images/user_manual/catalog-request-modal.png)
 
-At the Counter Party Address we must enter the full connector URL, then we can see all the assets available to negotiate.
+At the Counter Party Address, enter the remote connector Protocol URL to retrieve the list of available assets for negotiation.
 
 To negotiate an asset we have to click at the "Negotiate" button at the card.
 
@@ -176,7 +176,7 @@ Then will open a modal with the negotiation process.
 
 ## 3.1. Contracts
 
-In the "Contracts" tab we can see all the assets that have been negotiated.
+In the Contracts tab, we can see the contract definitions, which define the rules and conditions under which assets can be negotiated.
 
 At the top we can find the top bar where you can search for a contract, select if is "Consuming" or "Providing", items per page to show and pagination.
 
@@ -188,7 +188,7 @@ To transfer an asset, we must click on the "Transfer" button.
 
 ## 3.2. Transfer
 
-Then a modal opens where we will put the data where we are going to transfer the asset.
+Then a modal opens where we configure the data transfer parameters for the selected asset.
 
 ![Contract Transfer Modal](./public/images/user_manual/contract-transfer-modal.png)
 
@@ -203,7 +203,7 @@ Transfer Types offered by the Provider:
 Destination Data Address:
 
 - Method: POST
-- Base URL: The full URL of the consumer API
+- Base URL: The consumer-side endpoint that the provider uses to push the data as part of the data transfer.
 
 Then we can click the "Start Transfer" button.
 
