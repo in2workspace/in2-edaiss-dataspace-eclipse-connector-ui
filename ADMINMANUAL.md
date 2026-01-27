@@ -2,8 +2,6 @@
 
 # EDAISS User Manual
 
-## Set up a new connector
-
 To set up a new connector, refer to the documentation at this link: [Set up a new connector](https://hub.docker.com/r/edaiss/connector)
 
 ### Top Bar
