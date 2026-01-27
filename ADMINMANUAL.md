@@ -2,6 +2,10 @@
 
 # EDAISS User Manual
 
+## Set up a new connector
+
+To set up a new connector, refer to the documentation at this link: [Set up a new connector](https://hub.docker.com/repository/docker/edaiss/connector/general)
+
 ### Top Bar
 
 At the top of the website, we find the connector name and a button to select the portal theme.
