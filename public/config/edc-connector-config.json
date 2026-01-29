@@ -1,39 +1,30 @@
 [
   {
     "connectorName": "Consell Comarcal del Pallars Jussà",
-    "managementUrl": "https://ca-edaiss-healthcare-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/management",
-    "defaultUrl": "https://ca-edaiss-healthcare-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/api",
-    "protocolUrl": "https://ca-edaiss-healthcare-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/protocol",
+    "managementUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/management",
+    "defaultUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/api",
+    "protocolUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/protocol",
     "federatedCatalogEnabled": false,
-    "federatedCatalogUrl": "https://ca-edaiss-healthcare-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/catalog",
-    "did": "did:web:ca-edaiss-healthcare-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io:healthcare-connector"
+    "federatedCatalogUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/catalog",
+    "did": "did:web:ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io:healthcare-connector"
   },
   {
     "connectorName": "Consell Comarcal de l'Alt Penedès",
-    "managementUrl": "https://ca-edaiss-healthcare-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/management",
-    "defaultUrl": "https://ca-edaiss-healthcare-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/api",
-    "protocolUrl": "https://ca-edaiss-healthcare-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/protocol",
+    "managementUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/management",
+    "defaultUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/api",
+    "protocolUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/protocol",
     "federatedCatalogEnabled": false,
-    "federatedCatalogUrl": "https://ca-edaiss-healthcare-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/catalog",
-    "did": "did:web:ca-edaiss-healthcare-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io:healthcare-connector"
+    "federatedCatalogUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/catalog",
+    "did": "did:web:ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io:healthcare-connector"
   },
   {
     "connectorName": "Analytic Platform",
-    "managementUrl": "https://ca-edaiss-analytics-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/management",
-    "defaultUrl": "https://ca-edaiss-analytics-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/api",
-    "protocolUrl": "https://ca-edaiss-analytics-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/protocol",
+    "managementUrl": "https://ca-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/management",
+    "defaultUrl": "https://ca-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/api",
+    "protocolUrl": "https://ca-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/protocol",
     "federatedCatalogEnabled": false,
-    "federatedCatalogUrl": "https://ca-edaiss-analytics-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/catalog",
-    "did": "did:web:ca-edaiss-analytics-con-old-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io:analytics-connector"
-  },
-  {
-    "connectorName": "Salud Pública",
-    "managementUrl": "https://ca-in2-edaiss-ds-pbhealth-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/management",
-    "defaultUrl": "https://ca-in2-edaiss-ds-pbhealth-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/api",
-    "protocolUrl": "https://ca-in2-edaiss-ds-pbhealth-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/protocol",
-    "federatedCatalogEnabled": false,
-    "federatedCatalogUrl": "https://ca-in2-edaiss-ds-pbhealth-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io/catalog",
-    "did": "did:web:ca-in2-edaiss-ds-pbhealth-dev.greensea-e5c14b01.spaincentral.azurecontainerapps.io:publichealth-connector"
+    "federatedCatalogUrl": "https://ca-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/catalog",
+    "did": "did:web:ca-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io:analytics-connector"
   }
 ]
 
