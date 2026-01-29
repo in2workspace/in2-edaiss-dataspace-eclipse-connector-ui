@@ -1,0 +1,12 @@
+[
+  {
+    "connectorName": "Analytic Platform",
+    "managementUrl": "https://ca-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/management",
+    "defaultUrl": "https://ca-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/api",
+    "protocolUrl": "https://ca-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/protocol",
+    "federatedCatalogEnabled": false,
+    "federatedCatalogUrl": "https://ca-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/catalog",
+    "did": "did:web:ca-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io:analytics-connector"
+  }
+]
+

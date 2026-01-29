@@ -1,0 +1,20 @@
+[
+  {
+    "connectorName": "Consell Comarcal del Pallars Jussà",
+    "managementUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/management",
+    "defaultUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/api",
+    "protocolUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/protocol",
+    "federatedCatalogEnabled": false,
+    "federatedCatalogUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/catalog",
+    "did": "did:web:ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io:healthcare-connector"
+  },
+  {
+    "connectorName": "Consell Comarcal de l'Alt Penedès",
+    "managementUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/management",
+    "defaultUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/api",
+    "protocolUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/protocol",
+    "federatedCatalogEnabled": false,
+    "federatedCatalogUrl": "https://ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/catalog",
+    "did": "did:web:ca-edaiss-healthcare-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io:healthcare-connector"
+  }
+]
