@@ -1,0 +1,79 @@
+name: edaiss-ui-healthcare-deploy-dev
+
+on: workflow_dispatch
+
+# Permissions required for OIDC authentication
+permissions:
+  id-token: write
+  contents: read
+  pull-requests: write
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+     # Checkout the repository to the GitHub Actions runner
+     - name: Checkout
+       uses: actions/checkout@v4
+
+     - name: Set IMAGE_TAG
+       run: |
+          SHORT_SHA=$(echo "${GITHUB_SHA}" | cut -c1-7)
+          echo "Using commit SHA as image tag: $SHORT_SHA"
+          echo "IMAGE_TAG=$SHORT_SHA" >> $GITHUB_ENV
+     
+     # Login to Azure with Github secrets variables
+     - name: Azure Login
+       uses: azure/login@v2
+       with:
+        client-id: ${{ secrets.AZURE_CLIENT_ID }}
+        tenant-id: ${{ secrets.AZURE_TENANT_ID }}
+        subscription-id: ${{ secrets.AZURE_SUBSCRIPTION_ID_DEV }}
+        
+     # Login to the Azure Container Registry
+     - name: Login to ACR
+       run: az acr login --name acrin2edaissdataspacelab
+    
+     - name: Upload config files to Azure File Share
+       uses: cahaseler/azure-fileshare-upload@v1.0.0
+       with:
+        account_name: stin2edaisshealthcarelab
+        account_key: ${{ secrets.AZURE_HEALTHCARE_STORAGE_KEY_DEV }}
+        share_name: fs-healthcare-ui
+        source_dir: public/config/healthcare-connector/dev
+
+     - name: Build and deploy Container App
+       uses: azure/container-apps-deploy-action@v1
+       with:
+        appSourcePath: .
+        dockerfilePath: Dockerfile
+        acrName: acrin2edaissdataspacelab
+        containerAppName: ca-in2-edaiss-healthcareui-lab
+        resourceGroup: rg-in2-edaiss-data-lab
+        imageToBuild: acrin2edaissdataspacelab.azurecr.io/connector-ui-dev:latest
+        imageToDeploy: acrin2edaissdataspacelab.azurecr.io/connector-ui-dev:latest
+
+     - name: Tag latest image with latest push
+       run: |
+         docker pull acrin2edaissdataspacelab.azurecr.io/connector-ui-dev:latest
+         docker tag \
+           acrin2edaissdataspacelab.azurecr.io/connector-ui-dev:latest \
+           acrin2edaissdataspacelab.azurecr.io/connector-ui-dev:${{ env.IMAGE_TAG }}
+         docker push acrin2edaissdataspacelab.azurecr.io/connector-ui-dev:${{ env.IMAGE_TAG }}
+
+      # Force container app restart
+     - name: Stop Container App (scale to 0)
+       run: |
+        az containerapp update \
+          --name ca-in2-edaiss-healthcareui-lab \
+          --resource-group rg-in2-edaiss-data-lab \
+          --min-replicas 0
+      
+     - name: Start Container App (scale to 1)
+       run: |
+        az containerapp update \
+          --name ca-in2-edaiss-healthcareui-lab \
+          --resource-group rg-in2-edaiss-data-lab \
+          --min-replicas 1
+     
