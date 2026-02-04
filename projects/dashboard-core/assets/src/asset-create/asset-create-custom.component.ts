@@ -1,4 +1,4 @@
-import { Component, OnChanges } from '@angular/core';
+import { Component, inject, OnChanges } from '@angular/core';
 import {
   AssetInput,
   BaseDataAddress,
@@ -35,10 +35,13 @@ import { AssetCreateComponent } from './asset-create.component';
   styleUrl: './asset-create-custom.component.css',
 })
 export class AssetCreateCustomComponent extends AssetCreateComponent implements OnChanges {
+  protected override readonly assetService = inject(AssetService);
+  protected override readonly formBuilder = inject(FormBuilder);
+
   override assetForm: FormGroup;
 
-  constructor(assetService: AssetService, formBuilder: FormBuilder) {
-    super(assetService, formBuilder);
+  constructor() {
+    super();
     this.assetForm = this.formBuilder.group({
       id: [''],
       name: [''],

@@ -50,8 +50,8 @@ import { JsonValue } from '@angular-devkit/core';
   styleUrl: './asset-create.component.css',
 })
 export class AssetCreateComponent implements OnChanges {
-  private readonly assetService = inject(AssetService);
-  private readonly formBuilder = inject(FormBuilder);
+  protected readonly assetService = inject(AssetService);
+  protected readonly formBuilder = inject(FormBuilder);
 
   @Input() asset?: Asset;
   @Output() created = new EventEmitter<IdResponse>();
