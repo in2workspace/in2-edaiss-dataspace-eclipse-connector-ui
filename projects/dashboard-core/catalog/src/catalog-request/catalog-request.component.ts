@@ -28,7 +28,7 @@ import { CatalogRequestFormComponent } from '../catalog-request-form/catalog-req
 })
 export class CatalogRequestComponent implements OnDestroy {
   readonly stateService = inject(DashboardStateService);
-  private readonly modalAndAlertService = inject(ModalAndAlertService);
+  protected readonly modalAndAlertService = inject(ModalAndAlertService);
 
   private readonly destroy$ = new Subject<void>();
 

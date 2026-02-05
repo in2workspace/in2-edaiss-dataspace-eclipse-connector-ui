@@ -1,6 +1,6 @@
-import { Component, OnChanges, SimpleChanges } from '@angular/core';
+import { Component, inject, OnChanges, SimpleChanges } from '@angular/core';
 import { AsyncPipe, DatePipe, NgClass } from '@angular/common';
-import { ModalAndAlertService, DashboardStateService } from '@eclipse-edc/dashboard-core';
+import { DashboardStateService } from '@eclipse-edc/dashboard-core';
 import { TransferHistoryTableComponent } from './transfer-history-table.component';
 import { HttpClient } from '@angular/common/http';
 
@@ -11,13 +11,8 @@ import { HttpClient } from '@angular/common/http';
   templateUrl: './transfer-history-table-custom.component.html',
 })
 export class TransferHistoryTableCustomComponent extends TransferHistoryTableComponent implements OnChanges {
-  constructor(
-    protected override readonly modalAndAlertService: ModalAndAlertService,
-    public stateService: DashboardStateService,
-    private http: HttpClient,
-  ) {
-    super(modalAndAlertService);
-  }
+  public stateService = inject(DashboardStateService);
+  private http = inject(HttpClient);
 
   override async ngOnChanges(changes: SimpleChanges) {
     if (this.transferProcesses) {

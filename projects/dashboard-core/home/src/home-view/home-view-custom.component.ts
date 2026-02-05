@@ -13,9 +13,7 @@
  */
 
 import { Component } from '@angular/core';
-import { DashboardStateService } from '@eclipse-edc/dashboard-core';
 import { AsyncPipe } from '@angular/common';
-import { Router } from '@angular/router';
 import { HomeViewComponent } from './home-view.component';
 
 @Component({
@@ -23,8 +21,4 @@ import { HomeViewComponent } from './home-view.component';
   imports: [AsyncPipe],
   templateUrl: './home-view-custom.component.html',
 })
-export class HomeViewCustomComponent extends HomeViewComponent {
-  constructor(stateService: DashboardStateService, router: Router) {
-    super(stateService, router);
-  }
-}
+export class HomeViewCustomComponent extends HomeViewComponent {}

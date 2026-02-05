@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
 import { AsyncPipe } from '@angular/common';
-import { ContractDefinitionsService } from '../..';
-import {
-  DashboardStateService,
-  FilterInputComponent,
-  ItemCountSelectorComponent,
-  ModalAndAlertService,
-  PaginationComponent,
-} from '@eclipse-edc/dashboard-core';
+
+import { FilterInputComponent, ItemCountSelectorComponent, PaginationComponent } from '@eclipse-edc/dashboard-core';
 import { ContractDefinitionCardCustomComponent } from '../contract-definition-card/contract-definition-card-custom.component';
 import { ContractDefinitionsViewComponent } from './contract-definitions-view.component';
 
@@ -24,12 +18,4 @@ import { ContractDefinitionsViewComponent } from './contract-definitions-view.co
   styleUrl: './contract-definitions-view-custom.component.css',
   standalone: true,
 })
-export class ContractDefinitionsViewCustomComponent extends ContractDefinitionsViewComponent {
-  constructor(
-    contractDefinitionsService: ContractDefinitionsService,
-    modalAndAlertService: ModalAndAlertService,
-    stateService: DashboardStateService,
-  ) {
-    super(contractDefinitionsService, modalAndAlertService, stateService);
-  }
-}
+export class ContractDefinitionsViewCustomComponent extends ContractDefinitionsViewComponent {}

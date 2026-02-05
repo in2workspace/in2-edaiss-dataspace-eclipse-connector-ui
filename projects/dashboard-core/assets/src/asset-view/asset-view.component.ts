@@ -38,7 +38,7 @@ import { AssetCardComponent } from '../asset-card/asset-card.component';
 })
 export class AssetViewComponent implements OnInit, OnDestroy {
   private readonly assetService = inject(AssetService);
-  private readonly modalAndAlertService = inject(ModalAndAlertService);
+  protected readonly modalAndAlertService = inject(ModalAndAlertService);
   private readonly stateService = inject(DashboardStateService);
 
   protected readonly destroy$ = new Subject<void>();

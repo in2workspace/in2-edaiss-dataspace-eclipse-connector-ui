@@ -1,13 +1,7 @@
 import { Component } from '@angular/core';
-import { CatalogService } from '../catalog.service';
+
 import { AsyncPipe } from '@angular/common';
-import {
-  DashboardStateService,
-  FilterInputComponent,
-  ItemCountSelectorComponent,
-  ModalAndAlertService,
-  PaginationComponent,
-} from '@eclipse-edc/dashboard-core';
+import { FilterInputComponent, ItemCountSelectorComponent, PaginationComponent } from '@eclipse-edc/dashboard-core';
 import { CatalogCardCustomComponent } from '../catalog-card/catalog-card-custom.component';
 import { CatalogViewComponent } from './catalog-view.component';
 import { CatalogRequestCustomComponent } from '../catalog-request/catalog-request-custom.component';
@@ -31,14 +25,6 @@ import { NegotiationProgressComponent } from '../negotiation-progress/negotiatio
   styleUrl: './catalog-view-custom.component.css',
 })
 export class CatalogViewCustomComponent extends CatalogViewComponent {
-  constructor(
-    stateService: DashboardStateService,
-    catalogService: CatalogService,
-    modalAndAlertService: ModalAndAlertService,
-  ) {
-    super(stateService, catalogService, modalAndAlertService);
-  }
-
   override negotiateContract(catalogDataset: CatalogDataset) {
     const callbacks = {
       negotiationRequested: (id: IdResponse) => {

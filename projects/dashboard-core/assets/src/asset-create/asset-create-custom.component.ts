@@ -1,4 +1,4 @@
-import { Component, inject, OnChanges } from '@angular/core';
+import { Component, OnChanges } from '@angular/core';
 import {
   AssetInput,
   BaseDataAddress,
@@ -7,7 +7,6 @@ import {
   IdResponse,
 } from '@think-it-labs/edc-connector-client';
 import { NgClass, NgIf } from '@angular/common';
-import { AssetService } from '../asset.service';
 import {
   AlertComponent,
   DataAddressFormComponent,
@@ -15,7 +14,7 @@ import {
   JsonObjectInputComponent,
   JsonObjectTableComponent,
 } from '@eclipse-edc/dashboard-core';
-import { FormBuilder, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { AssetCreateComponent } from './asset-create.component';
 
 @Component({
@@ -35,9 +34,6 @@ import { AssetCreateComponent } from './asset-create.component';
   styleUrl: './asset-create-custom.component.css',
 })
 export class AssetCreateCustomComponent extends AssetCreateComponent implements OnChanges {
-  protected override readonly assetService = inject(AssetService);
-  protected override readonly formBuilder = inject(FormBuilder);
-
   override assetForm: FormGroup;
 
   constructor() {

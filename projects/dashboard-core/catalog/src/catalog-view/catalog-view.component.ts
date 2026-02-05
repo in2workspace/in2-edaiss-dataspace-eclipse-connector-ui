@@ -61,7 +61,7 @@ import { NegotiationProgressComponent } from '../negotiation-progress/negotiatio
 export class CatalogViewComponent implements OnInit, OnDestroy {
   stateService = inject(DashboardStateService);
   private readonly catalogService = inject(CatalogService);
-  private readonly modalAndAlertService = inject(ModalAndAlertService);
+  protected readonly modalAndAlertService = inject(ModalAndAlertService);
 
   private readonly destroy$ = new Subject<void>();
 

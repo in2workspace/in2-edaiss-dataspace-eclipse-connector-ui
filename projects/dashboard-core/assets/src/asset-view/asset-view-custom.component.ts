@@ -1,15 +1,9 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
-import { AssetService } from '../asset.service';
+
 import { AsyncPipe } from '@angular/common';
 import { Asset, IdResponse } from '@think-it-labs/edc-connector-client';
-import { Subject, takeUntil } from 'rxjs';
-import {
-  DashboardStateService,
-  FilterInputComponent,
-  ItemCountSelectorComponent,
-  ModalAndAlertService,
-  PaginationComponent,
-} from '@eclipse-edc/dashboard-core';
+import { Subject } from 'rxjs';
+import { FilterInputComponent, ItemCountSelectorComponent, PaginationComponent } from '@eclipse-edc/dashboard-core';
 import { AssetCardCustomComponent } from '../asset-card/asset-card-custom.component';
 import { AssetViewComponent } from './asset-view.component';
 import { AssetCreateCustomComponent } from '../asset-create/asset-create-custom.component';
@@ -23,15 +17,6 @@ import { AssetCreateCustomComponent } from '../asset-create/asset-create-custom.
 })
 export class AssetViewCustomComponent extends AssetViewComponent implements OnInit, OnDestroy {
   protected override readonly destroy$ = new Subject<void>();
-
-  constructor(
-    protected override readonly assetService: AssetService,
-    protected override readonly modalAndAlertService: ModalAndAlertService,
-    protected override readonly stateService: DashboardStateService,
-  ) {
-    super(assetService, modalAndAlertService, stateService);
-    this.stateService.currentEdcConfig$.pipe(takeUntil(this.destroy$)).subscribe(this.fetchAssets.bind(this));
-  }
 
   override createAsset() {
     const callbacks = {
