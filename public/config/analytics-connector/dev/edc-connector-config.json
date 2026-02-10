@@ -4,8 +4,8 @@
     "managementUrl": "https://ca-in2-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/management",
     "defaultUrl": "https://ca-in2-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/api",
     "protocolUrl": "https://ca-in2-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/protocol",
-    "federatedCatalogEnabled": false,
-    "federatedCatalogUrl": "https://ca-in2-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/catalog",
+    "federatedCatalogEnabled": true,
+    "federatedCatalogUrl": "https://ca-edaiss-fed-catalog-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io/catalog",
     "did": "did:web:ca-edaiss-analytics-con-lab.wittyriver-2d7c70b2.spaincentral.azurecontainerapps.io:analytics-connector"
   }
 ]
